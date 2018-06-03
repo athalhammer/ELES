@@ -24,7 +24,6 @@ $(select).annotate(settings); $(select).annotate("best");
 $("input").click(function() {
 	$("#source").hide();
 	$(select).text($("#text").val());
-	var settings = { "endpoint" : "http://www.dbpedia-spotlight.com/en/", "its" : "yes", "spotter" : "Default" };
 	$(select).annotate(settings); $(select).annotate("best");
 	
 	
