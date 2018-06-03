@@ -15,7 +15,7 @@ var select = ".annotate";
 // as soon as the annotations are ready, start registering mouseover events
 // parameters: topK, language, fixed properties, service
 $(select).bind("DOMSubtreeModified", function() {
-qSUM(6, "en", null, "http://km.aifb.kit.edu/services/link/sum");
+qSUM(6, "en", null, "https://km.aifb.kit.edu/services/link/sum");
 });
 
 var settings = { "endpoint" : "https://model.dbpedia-spotlight.org/en/", "its" : "yes", "spotter" : "Default" };
@@ -24,6 +24,7 @@ $(select).annotate(settings); $(select).annotate("best");
 $("input").click(function() {
 	$("#source").hide();
 	$(select).text($("#text").val());
+	var settings = { "endpoint" : "https://model.dbpedia-spotlight.org/en/", "its" : "yes", "spotter" : "Default" };
 	$(select).annotate(settings); $(select).annotate("best");
 	
 	
