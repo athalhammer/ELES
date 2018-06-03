@@ -218,7 +218,7 @@ function summa(uri, topK, language, fixedProperty, id, service) {
 
 			//duck duck go parts of pictures and abstract
 
-			var url2 = "http://km.aifb.kit.edu/services/duckbpedia?dbpedia=" + uri;
+			var url2 = "https://km.aifb.kit.edu/services/duckbpedia?dbpedia=" + uri;
 			var statement2 = {
 				"img" : "",
 				"text" : "",
