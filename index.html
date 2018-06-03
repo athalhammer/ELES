@@ -18,7 +18,7 @@ $(select).bind("DOMSubtreeModified", function() {
 qSUM(6, "en", null, "http://km.aifb.kit.edu/services/link/sum");
 });
 
-var settings = { "endpoint" : "http://www.dbpedia-spotlight.com/en/", "its" : "yes", "spotter" : "Default" };
+var settings = { "endpoint" : "http://model.dbpedia-spotlight.org/en/", "its" : "yes", "spotter" : "Default" };
 $(select).annotate(settings); $(select).annotate("best");
 
 $("input").click(function() {
