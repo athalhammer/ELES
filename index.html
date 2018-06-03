@@ -1,0 +1,77 @@
+
+<!DOCTYPE html><html><head><title>ELES</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/summaClient.css" />
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/dbpedia-spotlight-0.3.js"></script>
+<script src="js/summaClient.js"></script>
+<style>span[its-ta-ident-ref] {background-color:#AAAAAA}</style>
+<script>
+$(document).ready(function() {
+// selector on HTML element(s)
+var select = ".annotate";
+
+// as soon as the annotations are ready, start registering mouseover events
+// parameters: topK, language, fixed properties, service
+$(select).bind("DOMSubtreeModified", function() {
+qSUM(6, "en", null, "http://km.aifb.kit.edu/services/link/sum");
+});
+
+var settings = { "endpoint" : "http://www.dbpedia-spotlight.com/en/", "its" : "yes", "spotter" : "Default" };
+$(select).annotate(settings); $(select).annotate("best");
+
+$("input").click(function() {
+	$("#source").hide();
+	$(select).text($("#text").val());
+	var settings = { "endpoint" : "http://www.dbpedia-spotlight.com/en/", "its" : "yes", "spotter" : "Default" };
+	$(select).annotate(settings); $(select).annotate("best");
+	
+	
+});
+});
+
+function adidas() {
+	var select = ".annotate";
+
+	$(".annotate").html("Twitter Had a Lot to Say About Nick Young’s New Adidas Sneakers.<br><br> Social media has proven to be pretty ruthless when it comes to basketball sneakers. In June, people couldn’t help but roast Stephen Curry’s Under Armour “Chef” shoes. Then in August, images surfaced of a rumored James Harden Adidas signature model, which was promptly torn apart on Twitter. The latest player to set sneaker Twitter ablaze is none other than “Swaggy P,” Nick Young.<br><br>After Nice Kicks unveiled Young’s player exclusive Adidas Crazy Explosive colorway (above) on Saturday, Twitter started buzzing almost immediately. However, unlike the overwhelmingly negative reactions to Curry’s Under Armour shoes and Harden’s Adidas model, opinions seem to be split on Young’s shoe.<br><br> Instead of lambasting the Crazy Explosive’s design, most people were surprised that Adidas chose Young — who averaged fewer than 10 points and 20 minutes per game playing for the Los Angeles Lakers during the 2015-16 NBA season — to receive a player exclusive colorway of one of its premier sneakers.\nAdidas Crazy ExplosiveA look at the logo on the tongue of Nick Young’s Adidas Crazy Explosive player exclusive. <br><br>It’s important to note that unlike Curry and Harden’s shoes, this Crazy Explosive isn’t a signature shoe for Young. Instead, it’s a special colorway that’s been branded with his logo on the tongue. As of Oct. 11, Young’s white-and-gray Primeknit colorway of the Adidas Crazy Explosive is still available from adidas.com for $150<br><br>");
+	$("#source").html("(Source: <a href='http://footwearnews.com/2016/focus/athletic-outdoor/nick-young-adidas-crazy-explosive-twitter-reactions-267054/'>http://footwearnews.com/2016/focus/athletic-outdoor/nick-young-adidas-crazy-explosive-twitter-reactions-267054/</a>)<br><br>");
+
+	var settings = { "endpoint" : "http://www.dbpedia-spotlight.com/en/", "its" : "yes", "spotter" : "Default" };
+	$(select).annotate(settings); $(select).annotate("best");
+
+	
+}
+</script>
+<body>
+<div class="content">
+Best Demo Award at <a href="http://icwe2016.webengineering.org/">ICWE 2016</a>.<br><br>
+<h1>ELES: Combining Entity Linking and Entity Summarization</h1>
+<div class="annotate">
+Metastatic spread of colorectal cancer (CRC) to the peritoneal cavity is common and difficult to treat, with many patients dying from malignant bowel obstruction. Chimeric antigen receptor T cell (CAR-T) immunotherapy has shown great promise, and we previously reported murine and phase I clinical studies on regional intrahepatic CAR-T infusion for CRC liver metastases. We are now studying intraperitoneal (IP) delivery of CAR-Ts for peritoneal carcinomatosis. Regional IP infusion of CAR-T resulted in superior protection against carcinoembryonic antigen (CEA+) peritoneal tumors, when compared with systemically infused CAR-Ts. IP CAR-Ts also provided prolonged protection against IP tumor re-challenges and demonstrated an increase in effector memory phenotype over time. IP CAR-Ts provided protection against tumor growth at distant subcutaneous (SC) sites in association with increases in serum IFNγ levels. Given the challenges posed by immunoinhibitory pathways in solid tumors, we combined IP CAR-T treatment with suppressor cell targeting. High frequencies of myeloid-derived suppressor cells (MDSC) and regulatory T cells (Treg) were found within the IP tumors, with MDSC expressing high levels of immunosuppressive PD-L1. Combinatorial IP CAR-T treatment with depleting antibodies against MDSC and Treg further improved efficacy against peritoneal metastases. Our data support further development of combinatorial IP CAR-T immunotherapy for peritoneal malignancies.
+</div><br>
+<div id="source">(Source: <a href="http://www.nature.com/cgt/journal/v23/n5/full/cgt201614a.html">http://www.nature.com/cgt/journal/v23/n5/full/cgt201614a.html</a>)<br><br></div>
+Try it with your own texts:
+<div id="input">
+<textarea id="text" rows="3" cols="80"></textarea><br>
+<input type="submit" value="ELES!"/>
+</div><br>
+<div>Further examples:<ul><li><a href="#" onclick="adidas();">Adidas</a></li></ul></div><br><br>
+Publication:<br>
+<a target="_blank" href="http://www.aifb.kit.edu/web/Andreas_Thalhammer">Andreas Thalhammer</a> and <a target="_blank" href="http://www.aifb.kit.edu/web/Achim_Rettinger">Achim Rettinger</a>. <a href="http://www.aifb.kit.edu/images/5/5d/ELES.pdf">ELES: Combining Entity Linking and Entity Summarization.</a> In Web Engineering: 16th International Conference, ICWE 2016, Lugano, Switzerland, June 6-9, 2016. Proceedings, volume 9671 of Lecture Notes in Computer Science, pages 547-550. Springer International Publishing, Cham, 2016.<br><br>
+
+Entity Linking by <a target="_blank" href="https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki">DBpedia Spotlight</a>.<br>
+ELES is supported by <a target="_blank" href="http://www.aifb.kit.edu/web/SumOn">SumOn</a> and <a target="_blank" href="http://www.aifb.kit.edu/web/XLiMe">xLiMe</a>.<br>
+</div>
+</body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47223641-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>
