@@ -201,8 +201,8 @@ function summa(uri, topK, language, fixedProperty, id, service) {
 			 $("#" + id).children("table").append("<tr><td>" + label(print.statements[i].predicate) + " of&nbsp;&nbsp;&nbsp;&nbsp;</td><td><a class=\"" + id + " " + "click\"id=\"" + print.statements[i].subject + "\" href=\"#" + print.statements[i].subject + "\">" + label(print.statements[i].subject) + "</a></td></tr>");
 			 }
 			 } */
-			$("#" + id).append("<i style='font-size:10px'>_______<br>Summary by: <a href='" + service.substring(0, service.lastIndexOf("/")) + "'>" 
-            + service.substring(0, service.lastIndexOf("/")) + "</a>"
+			$("#" + id).append("<i style='font-size:10px'>_______<br>Summary by: <a href='" + service.substring(0, service.lastIndexOf("/") + 1) + "'>" 
+            + service.substring(0, service.lastIndexOf("/") + 1) + "</a>"
             + "<br>Sources: <a href='http://dbpedia.org'>http://dbpedia.org</a>"
             + ", <a href='http://wikipedia.org'>http://wikipedia.org</a>"
             + ", <a href='http://duckduckgo.com/'>http://duckduckgo.com/</a></i>");
